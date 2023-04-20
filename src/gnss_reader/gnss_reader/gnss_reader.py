@@ -13,7 +13,7 @@ class GnssPub(Node):
         timer_period = 0.5
         self.create_timer(timer_period, self.timer_cb)
 
-        self.ellipsoid = pymap3d.Ellipsoid()
+        self.ellipsoid = pymap3d.Ellipsoid.from_name("wgs84")
         # base
         self.lat_0 = 55.760057829964516
         self.lon_0 = 48.75896086562219
