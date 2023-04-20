@@ -29,7 +29,7 @@ class GnssPub(Node):
                 east, north, up = pymap3d.geodetic2enu(parsed_data.lat, parsed_data.lon, parsed_data.alt,
                                                        self.lat_0, self.lon_0, self.hgt_0,
                                                        ell=self.ellipsoid, deg=True)
-                print(east, north, up)
+                # print(east, north, up)
                 msg = Pose()
                 # ENU
                 msg.position.x = east
@@ -43,5 +43,6 @@ def main(args=None):
     gnss_pub = GnssPub()
     rclpy.spin(gnss_pub)
 
-if __name__ =='__main__':
+
+if __name__ == '__main__':
     main()
